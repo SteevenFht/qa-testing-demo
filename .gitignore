@@ -1,0 +1,23 @@
+# Node / Playwright
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Playwright reports & artifacts
+playwright-report/
+test-results/
+blob-report/
+.trace/
+
+# Environment variables
+.env
+.env.*
+
+# OS / Editor
+.DS_Store
+.idea/
+.vscode/
+
+# Bruno
+.bruno/
