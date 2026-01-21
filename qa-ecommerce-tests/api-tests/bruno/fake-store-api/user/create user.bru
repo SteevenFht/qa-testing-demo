@@ -1,0 +1,38 @@
+meta {
+  name: create user
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_URL}}/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": {{userId}},
+    "username": {{username}},
+    "email": {{email}},
+    "password": {{password}}
+  }
+}
+
+tests {
+  test('Status code is 201', () => {
+    expect(res.status).to.equal(201);
+  });
+  
+  console.log(res.body);
+  test('response body matches expected body', () => {
+    expect(res.body.id).to.equal(11);
+  });
+  
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

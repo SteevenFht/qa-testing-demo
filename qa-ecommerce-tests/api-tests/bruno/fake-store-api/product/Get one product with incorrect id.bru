@@ -1,0 +1,36 @@
+meta {
+  name: Get one product with incorrect id
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_URL}}/products/{{incorrectProductId}}
+  body: none
+  auth: inherit
+}
+
+script:pre-request {
+  
+  
+}
+
+tests {
+  
+  test('Status code is 200 (API returns empty for invalid id)', () => {
+    expect(res.status).to.equal(200);
+  });
+  
+  test('Response body is empty for invalid productId', () => {
+    expect(res.body).not.to.eql(99999999999);
+  });
+  
+  
+  
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
